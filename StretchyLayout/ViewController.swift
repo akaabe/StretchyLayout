@@ -18,21 +18,19 @@ class ViewController: UICollectionViewController {
         self.collectionView?.delegate = self
         self.collectionView?.clipsToBounds = false
 
-        self.collectionView?.backgroundColor = UIColor.whiteColor()
-        self.collectionView?.indicatorStyle = UIScrollViewIndicatorStyle.Default
+        self.collectionView?.backgroundColor = UIColor.white
+        self.collectionView?.indicatorStyle = UIScrollViewIndicatorStyle.default
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) ->Int
-    {
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) ->Int {
         return 20
     }
     
-    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
-    {
-        let cell: UICollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier(cellIdentifier, forIndexPath: indexPath)
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell: UICollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath)
         cell.layer.cornerRadius = 5
-        cell.layer.borderColor = UIColor.lightGrayColor().CGColor
+        cell.layer.borderColor = UIColor.lightGray.cgColor
         cell.layer.borderWidth = 1
         return cell
     }
